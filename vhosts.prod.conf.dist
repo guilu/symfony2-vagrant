@@ -1,0 +1,43 @@
+<VirtualHost *:80>
+
+   ServerName adminCajerosV3.prod
+   ## Vhost docroot
+   DocumentRoot /var/www/deploy/current/web
+   DirectoryIndex app.php
+
+## Directories, there should at least be a declaration for /var/www/web
+<Directory /var/www/deploy/current/web>
+
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+
+    <IfModule mod_rewrite.c>
+        Options -MultiViews
+        RewriteEngine On
+          
+        #Show maintenance page if it exists
+        ErrorDocument 503 /maintenance.html
+        RewriteCond %{REQUEST_URI} !\.(css|gif|jpg|png)$
+        RewriteCond %{DOCUMENT_ROOT}/maintenance.html -f
+        RewriteCond %{SCRIPT_FILENAME} !maintenance.html
+        RewriteRule ^.*$  -  [redirect=503,last]
+
+        #REdireccion al controller principal
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ app.php [QSA,L]
+    </IfModule>
+  </Directory>
+
+  ## Logging
+  ErrorLog /var/log/apache2/adminCajerosV3.prod_error.log
+  LogLevel warn
+  ServerSignature Off
+  CustomLog /var/log/apache2/adminCajerosV3.prod_access.log combined
+  ## Server aliases
+  ServerAlias www.awesome.prod
+  ## SetEnv/SetEnvIf for variables at production environment
+  SetEnv APP_ENV prod
+  SetEnv APP_DEBUG false
+</VirtualHost>
