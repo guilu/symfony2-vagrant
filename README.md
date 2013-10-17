@@ -5,7 +5,6 @@ Configuración de vagrant para proyectos symfony2 (generada con PuPHPet y person
 Este repositorio contiene las configuraciones (puppet recipies, Vagrantfile, etc.) que tienes que poner en un proyecto symfony2 para levantar una máquina virtual (ubuntu 12.06) con vagrant y tener la aplicación funcionando en un host virtual de apache.
 
 ## Instalación
----
 
 Instala [virtualbox](https://www.virtualbox.org/) y [vagrant](http://www.vagrantup.com/).
 
@@ -28,7 +27,7 @@ A continuación hay varias configuraciones personalizadas con el nombre del proy
 * La base de datos se llama `blueboard` y el password de `root` es `1234`
 
 
-Edita los ficheros [^1] y modifica los nombres según la configuración de tu proyecto symfony2.
+Edita los ficheros (`Vagrantfile` y `puppet/hieradata/common.yaml`) y modifica los nombres según la configuración de tu proyecto symfony2.
 
 Con los ficheros modificados según tus necesidades ya puedes levantar la máquina
 
@@ -36,4 +35,4 @@ Con los ficheros modificados según tus necesidades ya puedes levantar la máqui
 
 y ya podrás entrar la máquina virtual con vagrant ssh y trastear lo que quieras.
 
-[^1]: Estos parámetros están en `Vagrantfile` y en `'/puppet/hieradata/common.yaml'`
+---
