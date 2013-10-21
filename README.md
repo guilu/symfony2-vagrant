@@ -8,9 +8,16 @@ Este repositorio contiene las configuraciones (puppet recipies, Vagrantfile, etc
 
 Instala [virtualbox](https://www.virtualbox.org/) y [vagrant](http://www.vagrantup.com/).
 
-Puedes instalar este repo como dun submódulo de git o clonar directamente el repo dentro de tu proyecto symfony2:
+Puedes instalar este repo como un submódulo de git o clonar directamente el repo dentro de tu proyecto symfony2:
+
+Submódulo:
+
+	git submodule add https://github.com/guilu/symfony2-vagrant.git vagrant
+
+o lo clonas directamente:
 
 	git clone https://github.com/guilu/symfony2-vagrant.git vagrant
+
 
 El fichero `Vagrantfile` debe estar en la raiz del proyecto symfony2 para que todo funcione correctamente, así que puedes sacarlo o crear un enlace symbólico:
 
