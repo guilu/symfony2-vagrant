@@ -1,6 +1,6 @@
 <VirtualHost *:80>
 
-   ServerName adminCajerosV3.prod
+   ServerName blueboard.prod
    ## Vhost docroot
    DocumentRoot /var/www/deploy/current/web
    DirectoryIndex app.php
@@ -31,10 +31,10 @@
   </Directory>
 
   ## Logging
-  ErrorLog /var/log/apache2/adminCajerosV3.prod_error.log
+  ErrorLog /var/log/apache2/blueboard.prod_error.log
   LogLevel warn
   ServerSignature Off
-  CustomLog /var/log/apache2/adminCajerosV3.prod_access.log combined
+  CustomLog /var/log/apache2/blueboard.prod_access.log combined
   ## Server aliases
   ServerAlias www.awesome.prod
   ## SetEnv/SetEnvIf for variables at production environment

@@ -13,7 +13,7 @@ vagrantfile-local:
         provider:
             virtualbox:
                 modifyvm:
-                    name: adminCajerosV3box
+                    name: BlueBoardbox
                     natdnshostresolver1: on
                     memory: '512'
                 setextradata:
@@ -61,7 +61,7 @@ apache:
         - rewrite
     vhosts:
         NVU4x5RyZqeY:
-            servername: adminCajerosV3.dev
+            servername: blueboard.dev
             serveraliases:
                 - www.awesome.dev
             docroot: /var/www/web
@@ -97,9 +97,9 @@ mysql:
         cGEzNLl9SXvL:
             grant:
                 - ALL
-            name: adminCajerosV3
+            name: blueboard
             host: localhost
-            user: adminCajerosV3
-            password: adminCajerosV3
+            user: blueboard
+            password: blueboard
             sql_file: ''
 
